@@ -22,7 +22,7 @@ runDeck() ### we need to run this because we're using a shiny application
 publish(title = 'social_comms', 'index.html', host = 'rpubs')
 
 ###publish to github
-publish(user = "dgohil", repo = "scomms_presentation")
+publish(user = "dgohil", repo = "scomms_ppt")
 
 #runApp("map_app")
 

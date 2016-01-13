@@ -158,7 +158,7 @@ Survey
 
 
 
-<iframe src=' assets/fig/livelihoods1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chartaea6300f1d6 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/livelihoods1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart25d6a6df6f3 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 <style>iframe{width:100%, height:400px;}</style>
 
@@ -187,7 +187,7 @@ Households with No Livestock: Namunyak
 ## Wildlife: Conflict Types
 
 
-<iframe src=' assets/fig/wildlife1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chartaea6f342b6f ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/wildlife1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart25d763d4560 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 <style>iframe{width:100%, height:400px;}</style>
 
