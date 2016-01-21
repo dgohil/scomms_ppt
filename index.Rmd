@@ -83,20 +83,18 @@ Conservancy Organogram
 
 **Adaptive management is a systematic approach for improving resource management by learning from management outcomes.**
 
---- &twocol #pilot
+--- &twocol_large #pilot
 
 ## Piloting Social COMMS
 
 *** =left
-**Pilot Conservancies**
-
 ```{r scomms_pilot, echo=FALSE, comment=FALSE, results='asis',message=FALSE, cache=TRUE, warning=FALSE, fig.height=9, fig.width=8}
 library(rgdal)
 library(sp)
 scomms_pilot <- readOGR("data/nrt_centre.shp", layer="nrt_centre", verbose=FALSE)
 scomms_pilot$pilot <- as.factor(scomms_pilot$pilot)
 scomms_pilot@data$colour <- "#FFFFFF"
-scomms_pilot@data$colour[(as.numeric(scomms_pilot@data$pilot) %% 10) == 1] <- "#FFFFCC"
+scomms_pilot@data$colour[(as.numeric(scomms_pilot@data$pilot) %% 10) == 1] <- "#680300"
 scomms_pilot@data$colour[(as.numeric(scomms_pilot@data$pilot) %% 10) == 2] <- "#006837"
 scomms_pilot@data$colour[(as.numeric(scomms_pilot@data$pilot) %% 10) == 3] <- "#31A354"
 p1 <- plot(scomms_pilot, col=scomms_pilot$colour, border=NA)
@@ -104,6 +102,7 @@ legend("topleft", legend=c("2016","2014","2015"),title="Legend", bty="n",inset=0
 ```
 
 *** =right 
+
 **Progress**
 
 Pilot
@@ -120,8 +119,58 @@ Pilot
   - County
   - NRT   
 - Seasonal (Wet Season)
+
+<style>#pilot li{font-size: 80%}</style>
+
  
- <style>#pilot li{font-size: 80%}</style>
+--- &vcenter
+
+## What is the PURPOSE for Social COMMS?
+<style>
+p.red {
+  color:  #A00F0F;
+  font-size: 40px;
+}
+</style>
+
+.red **?**
+
+--- &twocol #purpose
+
+## Purpose of Social COMMS
+*** =left
+**NRT**
+- ***Monitor***
+ - Conservancy Governance
+ - Livelihoods
+ - Poverty Levels
+ - Security Perceptions
+ - Wildlife Perceptions
+ - Rangelands Patterns
+- ***Evaluate***
+ - Benefits
+ - Levels of Impact
+- ***Implement***
+ - Programs
+
+*** =right
+
+**Conservancy**
+- ***Monitor***
+ - Livelihoods
+ - Poverty Levels
+ - Security Perceptions
+ - Wildlife Perceptions
+ - Rangelands Patterns
+- ***Evaluate***
+ - Program Gaps
+ - CCDMP
+- ***Implement***
+ - Programs
+ - New Partners
+ 
+<style>#purpose li{font-size: 80%}</style>
+
 
 --- &twocol #sample
 
@@ -243,12 +292,86 @@ n1$show('iframe', cdn = TRUE)
 
 ## Assets
 
-*** {class: active, img: "assets/img/avg_livestock.jpg"}
+*** {class: active, img: "assets/img/poverty_namunyak/nm_livelihoods.pdf"}
+Main Livelihood Options: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/income_importance.jpg"}
+Importance of Income Sources: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/income_type_sub.jpg"}
+Income of Livestock vs Non-Livestock Households: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/lhds_heads_livestock.jpg"}
+Livestock Related Activities
+
+*** {class: active, img: "assets/img/poverty_namunyak/avg_livestock.jpg"}
 Average Livestock Numbers: Namunyak
 
-*** {img: "assets/img/no_livestock.jpg"}
+*** {img: "assets/img/poverty_namunyak/no_livestock.jpg"}
 Households with No Livestock: Namunyak
 
+*** {img: "assets/img/poverty_namunyak/poverty_sub.jpg"}
+Poverty Line by sublocation: Namunyak
+
+--- &twocol
+
+## Overview of NRT Governance Scores
+***=left
+**NRT Governance Scores**
+
+- Modular
+ - 15 Parameters
+ - Sub-parameters
+ 
+- Qualitative
+ - Score: Subjective
+ - Range: 0-2
+ 
+- Annual
+- Report Cards
+- Adaptive Management
+
+***=right
+**Community Feedback**
+
+- Social COMMS
+ - Collect annually
+ - Need to integrate into score
+ - Unbiased
+ 
+- Map neglected areas
+- "Benefit" assessment
+- "Impact" asessment
+
+--- #myslide2
+
+<div>
+<iframe src="https://dgohil.shinyapps.io/gov_scomms/", width=500, height=600></iframe>
+</div>
+
+--- &vcenter
+
+## Governance Score and Poverty
+
+```{r corr, results = 'asis', cache = F, comment = NA, message = F, tidy= T, echo = F, fig.height=8, fig.width=9}
+gov <- read.csv("data/namunyak_gov.csv")
+
+thecor <- round(cor(gov[,sort(c("gov_score", "poverty_level"))], method="pearson", use="pairwise.complete.obs"),2)
+thecor[lower.tri(thecor)]<-NA
+library(reshape2)
+thecor<-melt(thecor)
+thecor$Var1<-as.character(thecor$Var1)
+thecor$Var2<-as.character(thecor$Var2)
+thecor<-na.omit(thecor)
+library(ggplot2)
+ggplot(thecor, aes(Var2, Var1))+
+  geom_tile(data=thecor, aes(fill=value), color="white")+
+  scale_fill_gradient2(low="blue", high="red", mid="white", 
+                       midpoint=0, limit=c(-1,1),name="Correlation\n(Pearson)")+
+  theme(axis.text.x = element_text(angle=45, vjust=1, size=11, hjust=1))+
+  coord_equal()
+
+```
 
 
 --- #myslide
@@ -258,6 +381,54 @@ Households with No Livestock: Namunyak
 <div>
 <iframe src="https://dgohil.shinyapps.io/app2/", width=500, height=600></iframe>
 </div>
+
+--- #rangelands
+
+## Rangelands
+
+<div>
+<iframe src="https://dgohil.shinyapps.io/rangelands/", width=500, height=600></iframe>
+</div>
+
+
+--- &vcenter
+
+## Livestock Movement Areas
+**Wet Season**
+
+```{r choropleth, results = 'asis', cache = F,warning=FALSE, comment = NA, message = F, echo = F}
+g <- read.csv("data/grazing.csv")
+wet_own_areas <- reshape(g,
+                         varying=c("wet_area1","wet_area2","wet_area3","wet_area4","wet_area5"),
+                         v.names="wet_area",
+                         timevar="hhid",
+                         times=c("wet_area1","wet_area2","wet_area3","wet_area4","wet_area5"),
+                         direction="long")
+wet_own_areas$wet_area <- factor(wet_own_areas$wet_area, levels=c(1,2,3,4,5,6),
+                                 labels=c("Laikipia","Isiolo","Samburu","Meru", "Marsabit", "Other"))
+g1 <- structable(ccy~wet_area, wet_own_areas)
+g1<- round((prop.table(as.matrix(g1), margin=2)),2)
+g1 <- as.data.frame(g1)
+print(xtable(g1), scalebox=0.7,auto=TRUE,type = "html", comment=F)
+```
+
+**Dry Season**
+```{r dry, results = 'asis', cache = F,warning=FALSE, comment = NA, message = F, echo = F}
+dry_own_areas <- reshape(g,
+                         varying=c("dry_area1","dry_area2","dry_area3","dry_area4","dry_area5"),
+                         v.names="dry_area",
+                         timevar="hhid",
+                         times=c("dry_area1","dry_area2","dry_area3","dry_area4","dry_area5"),
+                         direction="long")
+dry_own_areas$dry_area <- factor(dry_own_areas$dry_area, levels=c(1,2,3,4,5,6),
+                                 labels=c("Laikipia","Isiolo","Samburu","Meru", "Marsabit", "other"))
+g2 <- structable(ccy~dry_area, dry_own_areas)
+g2<- round((prop.table(as.matrix(g2), margin=2)),2)
+g2 <- as.data.frame(g2)
+print(xtable(g2), scalebox=0.7,auto=TRUE,type = "html", comment=F)
+
+```
+
 
 ---
 
@@ -347,6 +518,35 @@ Community and Conservancy Management and Development Plans
 *** =right
 ![ccdmp](assets/img/ccdmp.pdf)
 <img width=100px height=200px src=''assets/img/ccdmp.pdf"></img>
+
+--- &twocol
+
+## Challenges
+
+*** =left
+- Lack of Buy In
+ - "NRT Thing"
+- Multiple research fronts
+ - What information is required by whom?
+- Lack of Data Use
+- Need for standardized reporting
+- Limited information sharing avenues
+
+***What is the purpose of Social COMMS?***
+- Information needs & uses
+ - Timelines
+- Communication
+
+
+*** =right
+
+**Next Steps**
+- Standardized reporting template
+- Survey Revision
+- Frequency of Social COMMS
+- Determine Scale
+- Budgets and Timelines
+- Rollout
 
 
 --- {

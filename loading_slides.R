@@ -12,13 +12,15 @@ library(slidifyLibraries)
 library(knitr)
 library(shiny)
 library(rCharts)
+library(vcdExtra)
+library(xtable)
 author("slides") ### to launch the presentation
 
 #slidify('index.Rmd') ###to convert to slides if knit button doesn't work
 
 runDeck() ### we need to run this because we're using a shiny application
 
-###publish to rpubs - only runs 6 slides
+ ###publish to rpubs - only runs 6 slides
 publish(title = 'social_comms', 'index.html', host = 'rpubs')
 
 ###publish to github
@@ -28,5 +30,5 @@ publish(user = "dgohil", repo = "scomms_ppt")
 
 ###publish to shiny
 library(shinyapps)
-#runApp("~/Documents/NRT/scomms/Github/scomms_presentation/slides/map_app")
-#shinyapps::deployApp("~/Documents/NRT/scomms/Github/scomms_presentation/slides/map_app")
+runApp("~/Documents/NRT/scomms/Github/scomms_presentation/slides/rangelands")
+shinyapps::deployApp("~/Documents/NRT/scomms/Github/scomms_presentation/slides/rangelands")

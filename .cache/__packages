@@ -22,3 +22,4 @@ foreign
 stringr
 dplyr
 rMaps
+reshape2

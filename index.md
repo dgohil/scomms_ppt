@@ -83,16 +83,15 @@ Conservancy Organogram
 
 **Adaptive management is a systematic approach for improving resource management by learning from management outcomes.**
 
---- &twocol #pilot
+--- &twocol_large #pilot
 
 ## Piloting Social COMMS
 
 *** =left
-**Pilot Conservancies**
-
 ![plot of chunk scomms_pilot](assets/fig/scomms_pilot-1.png) 
 
 *** =right 
+
 **Progress**
 
 Pilot
@@ -109,8 +108,58 @@ Pilot
   - County
   - NRT   
 - Seasonal (Wet Season)
+
+<style>#pilot li{font-size: 80%}</style>
+
  
- <style>#pilot li{font-size: 80%}</style>
+--- &vcenter
+
+## What is the PURPOSE for Social COMMS?
+<style>
+p.red {
+  color:  #A00F0F;
+  font-size: 40px;
+}
+</style>
+
+.red **?**
+
+--- &twocol #purpose
+
+## Purpose of Social COMMS
+*** =left
+**NRT**
+- ***Monitor***
+ - Conservancy Governance
+ - Livelihoods
+ - Poverty Levels
+ - Security Perceptions
+ - Wildlife Perceptions
+ - Rangelands Patterns
+- ***Evaluate***
+ - Benefits
+ - Levels of Impact
+- ***Implement***
+ - Programs
+
+*** =right
+
+**Conservancy**
+- ***Monitor***
+ - Livelihoods
+ - Poverty Levels
+ - Security Perceptions
+ - Wildlife Perceptions
+ - Rangelands Patterns
+- ***Evaluate***
+ - Program Gaps
+ - CCDMP
+- ***Implement***
+ - Programs
+ - New Partners
+ 
+<style>#purpose li{font-size: 80%}</style>
+
 
 --- &twocol #sample
 
@@ -158,7 +207,7 @@ Survey
 
 
 
-<iframe src=' assets/fig/livelihoods1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart25d6a6df6f3 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/livelihoods1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart71046c1882d ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 <style>iframe{width:100%, height:400px;}</style>
 
@@ -166,12 +215,68 @@ Survey
 
 ## Assets
 
-*** {class: active, img: "assets/img/avg_livestock.jpg"}
+*** {class: active, img: "assets/img/poverty_namunyak/nm_livelihoods.pdf"}
+Main Livelihood Options: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/income_importance.jpg"}
+Importance of Income Sources: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/income_type_sub.jpg"}
+Income of Livestock vs Non-Livestock Households: Namunyak
+
+*** {img: "assets/img/poverty_namunyak/lhds_heads_livestock.jpg"}
+Livestock Related Activities
+
+*** {class: active, img: "assets/img/poverty_namunyak/avg_livestock.jpg"}
 Average Livestock Numbers: Namunyak
 
-*** {img: "assets/img/no_livestock.jpg"}
+*** {img: "assets/img/poverty_namunyak/no_livestock.jpg"}
 Households with No Livestock: Namunyak
 
+*** {img: "assets/img/poverty_namunyak/poverty_sub.jpg"}
+Poverty Line by sublocation: Namunyak
+
+--- &twocol
+
+## Overview of NRT Governance Scores
+***=left
+**NRT Governance Scores**
+
+- Modular
+ - 15 Parameters
+ - Sub-parameters
+ 
+- Qualitative
+ - Score: Subjective
+ - Range: 0-2
+ 
+- Annual
+- Report Cards
+- Adaptive Management
+
+***=right
+**Community Feedback**
+
+- Social COMMS
+ - Collect annually
+ - Need to integrate into score
+ - Unbiased
+ 
+- Map neglected areas
+- "Benefit" assessment
+- "Impact" asessment
+
+--- #myslide2
+
+<div>
+<iframe src="https://dgohil.shinyapps.io/gov_scomms/", width=500, height=600></iframe>
+</div>
+
+--- &vcenter
+
+## Governance Score and Poverty
+
+![plot of chunk corr](assets/fig/corr-1.png) 
 
 
 --- #myslide
@@ -182,12 +287,48 @@ Households with No Livestock: Namunyak
 <iframe src="https://dgohil.shinyapps.io/app2/", width=500, height=600></iframe>
 </div>
 
+--- #rangelands
+
+## Rangelands
+
+<div>
+<iframe src="https://dgohil.shinyapps.io/rangelands/", width=500, height=600></iframe>
+</div>
+
+
+--- &vcenter
+
+## Livestock Movement Areas
+**Wet Season**
+
+<table border=1>
+<tr> <th>  </th> <th> Ilngwesi </th> <th> Kalama </th> <th> lekurruki </th> <th> meibae  </th> <th> Melako </th> <th> Nakuprat_Gotu </th> <th> namunyak </th> <th> sera </th> <th> westgate </th>  </tr>
+  <tr> <td align="right"> Laikipia </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.99 </td> <td align="right"> 0.03 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.02 </td> </tr>
+  <tr> <td align="right"> Isiolo </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.03 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.01 </td> <td align="right"> 0.00 </td> <td align="right"> 0.01 </td> </tr>
+  <tr> <td align="right"> Samburu </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.94 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.99 </td> <td align="right"> 1.00 </td> <td align="right"> 0.97 </td> </tr>
+  <tr> <td align="right"> Meru </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> Marsabit </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> Other </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> <td align="right"> 0.00 </td> </tr>
+   </table>
+
+**Dry Season**
+<table border=1>
+<tr> <th>  </th> <th> Ilngwesi </th> <th> Kalama </th> <th> lekurruki </th> <th> meibae  </th> <th> Melako </th> <th> Nakuprat_Gotu </th> <th> namunyak </th> <th> sera </th> <th> westgate </th>  </tr>
+  <tr> <td align="right"> Laikipia </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.71 </td> <td align="right"> 0.34 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.15 </td> <td align="right"> 0.01 </td> <td align="right"> 0.15 </td> </tr>
+  <tr> <td align="right"> Isiolo </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.08 </td> <td align="right"> 0.06 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.15 </td> <td align="right"> 0.08 </td> <td align="right"> 0.25 </td> </tr>
+  <tr> <td align="right"> Samburu </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.49 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.45 </td> <td align="right"> 0.65 </td> <td align="right"> 0.55 </td> </tr>
+  <tr> <td align="right"> Meru </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.20 </td> <td align="right"> 0.01 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.04 </td> <td align="right"> 0.03 </td> <td align="right"> 0.00 </td> </tr>
+  <tr> <td align="right"> Marsabit </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.09 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.22 </td> <td align="right"> 0.20 </td> <td align="right"> 0.06 </td> </tr>
+  <tr> <td align="right"> other </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.01 </td> <td align="right"> 0.01 </td> <td align="right">  </td> <td align="right">  </td> <td align="right"> 0.00 </td> <td align="right"> 0.02 </td> <td align="right"> 0.00 </td> </tr>
+   </table>
+
+
 ---
 
 ## Wildlife: Conflict Types
 
 
-<iframe src=' assets/fig/wildlife1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart25d763d4560 ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
+<iframe src=' assets/fig/wildlife1-1.html ' scrolling='no' frameBorder='0' seamless class='rChart nvd3 ' id=iframe- chart710470900df ></iframe> <style>iframe.rChart{ width: 100%; height: 400px;}</style>
 
 <style>iframe{width:100%, height:400px;}</style>
 
@@ -492,6 +633,35 @@ Community and Conservancy Management and Development Plans
 *** =right
 ![ccdmp](assets/img/ccdmp.pdf)
 <img width=100px height=200px src=''assets/img/ccdmp.pdf"></img>
+
+--- &twocol
+
+## Challenges
+
+*** =left
+- Lack of Buy In
+ - "NRT Thing"
+- Multiple research fronts
+ - What information is required by whom?
+- Lack of Data Use
+- Need for standardized reporting
+- Limited information sharing avenues
+
+***What is the purpose of Social COMMS?***
+- Information needs & uses
+ - Timelines
+- Communication
+
+
+*** =right
+
+**Next Steps**
+- Standardized reporting template
+- Survey Revision
+- Frequency of Social COMMS
+- Determine Scale
+- Budgets and Timelines
+- Rollout
 
 
 --- {
